@@ -8,9 +8,11 @@ import lombok.NoArgsConstructor;
 import java.time.YearMonth;
 
 @Entity
+@Table(name = "cards")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class CardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +20,12 @@ public class CardEntity {
 
     private String cardNumber;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity owner;
 
     private YearMonth expiryDate;
 
+    @Enumerated
     private CardStatus cardStatus;
 
     private Long balance;

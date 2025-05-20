@@ -15,7 +15,7 @@ spring:
     name: BankCardsApp
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgres://localhost:5432/bankcards
+    url: jdbc:postgresql://localhost:5432/bankcards
     username: postgres
     password: postgres
   jpa:

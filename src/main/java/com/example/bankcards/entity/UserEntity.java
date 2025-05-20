@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -17,12 +18,19 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String username;
+
+    private String password;
+
     private String name;
 
     private String lastname;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
     private List<CardEntity> cards;
 
+    @Enumerated
     private Role role;
 }
