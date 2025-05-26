@@ -12,14 +12,13 @@ server:
 
 spring:
   application:
-    name: BankCardsApp
+    name: BankREST-applicationyml
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/bankcards
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create
-    show-sql: true
-
+      ddl-auto: ${JPA_HIBERNATE_DDL_AUTO}
+    show-sql: ${JPA_SHOW_SQL}

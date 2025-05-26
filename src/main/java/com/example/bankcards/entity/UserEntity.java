@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -29,7 +28,7 @@ public class UserEntity {
     @OneToMany(mappedBy = "owner",
             orphanRemoval = true,
             cascade = CascadeType.ALL)
-    private List<CardEntity> cards;
+    private Set<CardEntity> cards;
 
     @Enumerated
     private Role role;

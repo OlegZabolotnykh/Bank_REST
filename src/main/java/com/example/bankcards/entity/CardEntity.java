@@ -12,7 +12,6 @@ import java.time.YearMonth;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
 public class CardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
